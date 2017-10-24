@@ -63,8 +63,8 @@ $("document").ready(function(){
 	})
 
 	//on click function for creating a new search
-	$("#add-movie").on("click", function(event){	
-		search = $("#movie-input").val().trim();
+	$("#add-anime").on("click", function(event){	
+		search = $("#show-input").val().trim();
 		animeList.push(search);
 		getRequest(search);
 		
