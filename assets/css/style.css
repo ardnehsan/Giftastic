@@ -1,0 +1,15 @@
+.jumbotron{
+	text-align: center;
+}
+
+.gifimg	img{
+	width: 25%;
+	height: 25%;
+	padding: 1%; 
+}
+
+.gifimg{
+	 display: flex; 
+  	flex-wrap: wrap;
+	background-color: #F2F2F2;
+}
