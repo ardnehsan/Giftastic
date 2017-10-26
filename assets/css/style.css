@@ -21,18 +21,14 @@ button{
 
 .gifimg	img{
 	padding: 2%;
-	width: 25%;
+	width: 100%;
 	height: 25%;
 	padding-right: 5%;
 }
 
-.gifimg{
-	 display: flex; 
-  	flex-wrap: wrap;
-	background-color: #F2F2F2;
-}
 
 .gifimg p{
+	padding-left: 5%;
 	width: 100px;
 }
 

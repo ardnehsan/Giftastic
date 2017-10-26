@@ -1,5 +1,6 @@
 $("document").ready(function(){
 
+	//creates an array for the default buttons
 	var animeList = ["Gundam","Digimon", "Yugioh","Naruto", "Bleach", "One Piece","Fairy Tail", "My Hero Academia"];
 	var search ="";
 
@@ -7,6 +8,7 @@ $("document").ready(function(){
 	function renderButtons(){
 		$("#buttons-view").empty();
 
+		//runs through array to create buttons
 		for (var i = 0; i < animeList.length; i++) {
 			var a =$("<button>");
 			a.addClass("anime");
@@ -42,16 +44,17 @@ $("document").ready(function(){
 		    	for (var i = 0; i < response.data.length; i++) 
 		    	{
 		    		//creates an image from the response
-		    		gifimg = $("<img>");
+		    		$(".gifimg") = $("<img>");
 		    		var r = $("<p>");
 		    		var t = $("<p>");
 		    		r.text("Rating: " + response.data[i].rating);
 		    		t.text(response.data[i].title);
-		    		gifimg.addClass("animegif");
-		    		gifimg.attr("data-still", response.data[i].images.original_still.url);
-		  			gifimg.attr("data-animate", response.data[i].images.original.url);
-		  			gifimg.attr("src", gifimg.attr("data-still"));
-		    		
+
+		    		//adds necessary attributes to manipulate response values
+		    		$(".gifimg").addClass("animegif");
+		    		$(".gifimg").attr("data-still", response.data[i].images.original_still.url);
+		  			$(".gifimg").attr("data-animate", response.data[i].images.original.url);
+		  			$(".gifimg").attr("src", $(".gifimg").attr("data-still"));
 		    		$(".gifimg").append(t);
 		    		$(".gifimg").append(r);
 		    		$(".gifimg").append(gifimg);
@@ -69,11 +72,13 @@ $("document").ready(function(){
 					}
 		    	});
 			});
+
+
 		renderButtons();
 		$("#show-input").val('');
 	}
 
-	//Button request
+	//Button request to get the request
 	$(document).on("click", '.anime', function(event){
 		
 		search = $(this).text();
