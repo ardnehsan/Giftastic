@@ -2,6 +2,15 @@
 	text-align: center;
 }
 
+.jumbotron h1{
+	padding-bottom: 5%;
+}
+
+.jumbotron h1 img{
+	width: 100%;
+}
+
+
 .gifimg	img{
 	width: 25%;
 	height: 25%;
@@ -12,4 +21,17 @@
 	 display: flex; 
   	flex-wrap: wrap;
 	background-color: #F2F2F2;
+}
+
+
+.anime{
+	background-color: orange;
+	color: white;
+	border-radius: 12px;
+}
+
+#add-anime{
+	background-color: orange;
+	color: white;
+	border-radius: 12px;
 }

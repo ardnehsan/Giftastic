@@ -37,21 +37,39 @@ $("document").ready(function(){
 		      method: 'GET'
 		    }).done(function(response) {
 		    	
+		    	console.log(response);
+
 		    	for (var i = 0; i < response.data.length; i++) 
 		    	{
 		    		//creates an image from the response
-		    		gifimg = $("<img>").attr("src", response.data[i].images.original.url);
+		    		gifimg = $("<img>");
 		    		var r = $("<p>");
+		    		var t = $("<p>");
 		    		r.text("Rating: " + response.data[i].rating);
+		    		t.text(response.data[i].title);
 		    		gifimg.addClass("animegif");
-
+		    		gifimg.attr("data-still", response.data[i].images.original_still.url);
+		  			gifimg.attr("data-animate", response.data[i].images.original.url);
+		  			gifimg.attr("src", gifimg.attr("data-still"));
 		    		$(".gifimg").append(gifimg);
 		    		$(".gifimg").append(r);
+		    		$(".gifimg").append(t);
 		    	}
+
+		    	//function to stop animation
+				$(".animegif").on("click", function() {
+					if($(this).attr("src") === $(this).attr("data-still"))
+					{
+						$(this).attr("src", $(this).attr("data-animate"));
+					}
+					else
+					{
+						$(this).attr("src", $(this).attr("data-still"));
+					}
 		    	});
-
+			});
 		renderButtons();
-
+		$("#show-input").val('');
 	}
 
 	//Button request
