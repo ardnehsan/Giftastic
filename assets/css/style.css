@@ -2,6 +2,14 @@
 	text-align: center;
 }
 
+button{
+	margin: 1%;
+}
+
+#add-anime{
+	margin: 1%;
+}
+
 .jumbotron h1{
 	padding-bottom: 5%;
 }
@@ -12,9 +20,10 @@
 
 
 .gifimg	img{
+	padding: 2%;
 	width: 25%;
 	height: 25%;
-	padding: 1%; 
+	padding-right: 5%;
 }
 
 .gifimg{
@@ -23,6 +32,9 @@
 	background-color: #F2F2F2;
 }
 
+.gifimg p{
+	width: 100px;
+}
 
 .anime{
 	background-color: orange;

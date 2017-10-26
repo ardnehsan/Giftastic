@@ -28,7 +28,7 @@ $("document").ready(function(){
 		//build api
 		var apiKey = "&api_key=dc6zaTOxFJmzC";
 		var limit = "&limit=10&";
-		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + x +"+anime" + limit + "&rating=pg&"+ apiKey;
+		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + x +"+anime" + limit + "&rating=pg&"+ apiKey;
 
 
 		//ajax method to get a request from api
@@ -51,9 +51,10 @@ $("document").ready(function(){
 		    		gifimg.attr("data-still", response.data[i].images.original_still.url);
 		  			gifimg.attr("data-animate", response.data[i].images.original.url);
 		  			gifimg.attr("src", gifimg.attr("data-still"));
-		    		$(".gifimg").append(gifimg);
-		    		$(".gifimg").append(r);
+		    		
 		    		$(".gifimg").append(t);
+		    		$(".gifimg").append(r);
+		    		$(".gifimg").append(gifimg);
 		    	}
 
 		    	//function to stop animation
