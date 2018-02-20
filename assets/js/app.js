@@ -39,24 +39,23 @@ $("document").ready(function(){
 		      method: 'GET'
 		    }).done(function(response) {
 		    	
-		    	console.log(response);
+		    //	console.log(response);
 
 		    	for (var i = 0; i < response.data.length; i++) 
 		    	{
+	
 		    		//creates an image from the response
-		    		$(".gifimg") = $("<img>");
+		    		var gifimg = $("<img>");
 		    		var r = $("<p>");
 		    		var t = $("<p>");
 		    		r.text("Rating: " + response.data[i].rating);
 		    		t.text(response.data[i].title);
-
 		    		//adds necessary attributes to manipulate response values
-		    		$(".gifimg").addClass("animegif");
-		    		$(".gifimg").attr("data-still", response.data[i].images.original_still.url);
-		  			$(".gifimg").attr("data-animate", response.data[i].images.original.url);
-		  			$(".gifimg").attr("src", $(".gifimg").attr("data-still"));
-		    		$(".gifimg").append(t);
-		    		$(".gifimg").append(r);
+
+		    		gifimg.attr("data-still", response.data[i].images.original_still.url);
+					gifimg.attr("data-animate", response.data[i].images.original.url);
+					gifimg.attr("src", gifimg.attr("data-still"));
+					gifimg.addClass("animegif");
 		    		$(".gifimg").append(gifimg);
 		    	}
 
